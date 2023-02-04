@@ -1,0 +1,25 @@
+[tool.pdm]
+
+[project]
+name = "hitori-srs"
+version = "0.1.0"
+description = "A small program to help you add cards to Anki more quickly."
+authors = [
+    {name = "Niko Honu", email = "nikohonu@gmail.com"},
+]
+dependencies = [
+    "requests>=2.28.2",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-pep517>=1.0"]
+build-backend = "pdm.pep517.api"
+
+[project.scripts]
+hitori-srs = "hitori_srs.__main__:main"
+
+[tool.pdm.scripts]
+hitori-srs = {call = "hitori_srs.__main__:main"}
