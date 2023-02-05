@@ -573,7 +573,7 @@ summary = "Backport of pathlib-compatible object wrapper for zip files"
 
 [metadata]
 lock_version = "4.1"
-content_hash = "sha256:9586dd55fa4dc40624d7b2fba1f6009f70b97248fe1c9370bc8f2e4c3a887e62"
+content_hash = "sha256:40b84a9a96346796d3760fd0ca65e33005d98e7dcaf090efaac94c70f37df6f3"
 
 [metadata.files]
 "ansicon 1.89.0" = [

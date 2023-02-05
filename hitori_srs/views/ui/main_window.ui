@@ -56,10 +56,10 @@
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QPlainTextEdit" name="text_sentence"/>
+     <widget class="QTextEdit" name="text_sentence"/>
     </item>
     <item row="1" column="1">
-     <widget class="QPlainTextEdit" name="text_translated_sentence"/>
+     <widget class="QTextEdit" name="text_translated_sentence"/>
     </item>
    </layout>
   </widget>

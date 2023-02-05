@@ -17,8 +17,8 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
 from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QLineEdit,
-    QMainWindow, QMenu, QMenuBar, QPlainTextEdit,
-    QSizePolicy, QSpacerItem, QStatusBar, QWidget)
+    QMainWindow, QMenu, QMenuBar, QSizePolicy,
+    QSpacerItem, QStatusBar, QTextEdit, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -60,12 +60,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.label_3, 4, 0, 1, 2)
 
-        self.text_sentence = QPlainTextEdit(self.centralwidget)
+        self.text_sentence = QTextEdit(self.centralwidget)
         self.text_sentence.setObjectName(u"text_sentence")
 
         self.gridLayout.addWidget(self.text_sentence, 1, 0, 1, 1)
 
-        self.text_translated_sentence = QPlainTextEdit(self.centralwidget)
+        self.text_translated_sentence = QTextEdit(self.centralwidget)
         self.text_translated_sentence.setObjectName(u"text_translated_sentence")
 
         self.gridLayout.addWidget(self.text_translated_sentence, 1, 1, 1, 1)
