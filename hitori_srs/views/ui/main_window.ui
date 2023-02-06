@@ -7,39 +7,25 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>720</height>
+    <height>320</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>640</width>
+    <height>320</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>hitori_srs</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="5" column="0" colspan="2">
-     <spacer name="verticalSpacer">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
+    <item row="1" column="1">
+     <widget class="QTextEdit" name="text_translated_sentence"/>
     </item>
-    <item row="3" column="1">
-     <widget class="QLineEdit" name="edit_translated_word"/>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLineEdit" name="edit_word"/>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>Word</string>
-      </property>
-     </widget>
+    <item row="1" column="0">
+     <widget class="QTextEdit" name="text_sentence"/>
     </item>
     <item row="0" column="0" colspan="2">
      <widget class="QLabel" name="label_2">
@@ -48,18 +34,25 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="0" colspan="2">
-     <widget class="QLabel" name="label_3">
+    <item row="3" column="0">
+     <widget class="QTextEdit" name="text_word"/>
+    </item>
+    <item row="3" column="1">
+     <widget class="QTextEdit" name="text_definition"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label">
       <property name="text">
-       <string>picture</string>
+       <string>Word</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QTextEdit" name="text_sentence"/>
-    </item>
-    <item row="1" column="1">
-     <widget class="QTextEdit" name="text_translated_sentence"/>
+    <item row="4" column="0" colspan="2">
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Add</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -69,24 +62,33 @@
      <x>0</x>
      <y>0</y>
      <width>640</width>
-     <height>28</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
      <string>Word</string>
     </property>
-    <addaction name="action_add_word"/>
+    <addaction name="action_add_word_anki"/>
+    <addaction name="action_add_word_definition"/>
    </widget>
    <addaction name="menuEdit"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="action_add_word">
+  <action name="action_add_word_definition">
    <property name="text">
-    <string>Add</string>
+    <string>Add word definition</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="action_add_word_anki">
+   <property name="text">
+    <string>Add word to Anki</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
    </property>
   </action>
  </widget>

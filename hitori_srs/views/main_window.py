@@ -3,6 +3,7 @@ from PySide6.QtWidgets import QMainWindow
 from translatepy.translators.google import GoogleTranslate
 
 from hitori_srs.text import clear_sentence, clear_word
+from hitori_srs.views.definitions_dialog import DefinitionsDialog
 from hitori_srs.views.ui.main_window import Ui_MainWindow
 
 
@@ -23,16 +24,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def highlight_word(self, words):
         sentence = clear_sentence(self.text_sentence.toPlainText())
-        sentence_words = sentence.split()
-        result = []
-        for sentence_word in sentence_words:
-            if clear_word(sentence_word) in words:
-                result.append(
-                    f'<span style="color: rgb(0, 0, 255);">{sentence_word}</span>'
-                )
-            else:
-                result.append(sentence_word)
-        sentence = " ".join(result)
+        sentence = " ".join(sentence.split())
+        for word in words:
+            sentence = sentence.replace(word, f'<span style="color: rgb(0, 0, 255);">{word}</span>')
         self.text_sentence.setText(sentence)
 
     def add_word(self):
@@ -44,6 +38,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             word = singularize(word)
             words_for_highlighting.add(word)
             self.highlight_word(words_for_highlighting)
-            self.edit_word.setText(word)
-            translated_word = self.google.translate(word, self.language).result
-            self.edit_translated_word.setText(translated_word)
+            self.text_word.setText(word)
+            dd = DefinitionsDialog(word)
+            if dd.exec():
+                word, definition = dd.get_selected()
+                self.text_word.setText(word)
+                self.text_definition.setText(definition)
+
+            # translated_word = self.google.translate(word, self.language).result
+            # self.edit_translated_word.setText(translated_word)
